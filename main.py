@@ -16,15 +16,14 @@ while user_selection != "3":
 
     print()
     if user_selection == "1":
-        for book in library_inventory:
-            print(book)
-        print("\n\nWhich book would you like to read?\n")
-        book_selection = int(input("""
-    [1] How to Win Friends and Influence People
-    [2] Keys to Higher Consciousness
-    [3] The Laws of Success
-    
-    """))    
+        print("**************************************************************************")
+        print(f"There are currently {len(library_inventory)} books available in the library.\n\n")
+        for i in range(0,len(library_inventory)):
+            print("[" + str(i+1) + "] " + library_inventory[i])
+        
+        print("**************************************************************************")
+        book_selection = int(input("\n\nPlease select the number that corresponds to the book you'd like to read: \n"))
+
         print("\nYou've selected " + library_inventory[(book_selection)-1]+ "\n\n")
         library_inventory.pop(book_selection-1)
 
